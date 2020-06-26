@@ -39,3 +39,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('dashboard', 'Api\Admin\AdminController@dashboard');
 });
 
+
+
+Route::post('/donor/create','DonorController@store');

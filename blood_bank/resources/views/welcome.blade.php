@@ -60,6 +60,8 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+                color: red;
+                font-weight: bold;
             }
         </style>
     </head>
@@ -81,7 +83,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Blood_Bank
                 </div>
 
                 <div class="links">

@@ -12,11 +12,16 @@ class DonorController extends Controller
 {
     //
       //Get All Donors
-      public function index() {
-        return Donor::all(); 
-        return view('file.index',[
-            'donors'=> $donors,  
-          ]);
+    //   public function index() {
+    //     return Donor::all(); 
+    //     return view('file.index',[
+    //         'donors'=> $donors,  
+    //       ]);
+    // }
+
+    public function index() {
+        $donors = Donor::all(); 
+        return view('file.index',compact('donors'));
     }
 
     //find Donor by id

@@ -61,60 +61,42 @@
      <!-- /.container -->
  </nav>
  
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3">
 
 
+            <h3 class="text-primary"> Dashboard</h3>
+            <hr>
+            
+            <ul class="nav nav-stacked">
+                <li><a href="/viewMessage"><i class="fa fa-envelope fa-lg"></i> Inbox </a></li>
+                {{-- <li><a href="admin_donor.php"><i class="fa fa-search fa-lg"></i>Search Donors</a></li> --}}
+                <li><a href="/viewDonors"><i class="fa fa-users fa-lg text-success"></i>  Donors</a></li>
+                {{-- <li><a href="admin_ndonor.php"><i class="fa fa-users fa-lg text-danger"></i> Not Active Donors</a></li> --}}
+                {{-- <li><a href="admin_need_blood.php"><i class="fa fa-bed fa-lg"></i> Need Blood</a></li> --}}
+                <hr>
+                {{-- <li><a href="#add" data-toggle="collapse" ><i class="fa fa-cogs fa-lg"></i> Settings</a></li>
+                <ul class="nav collapse" id="add">
+                    <li><a href="admin_country.php"><i class="fa fa-plus fa-lg"></i> Add Country</a>
+                    <li><a href="admin_state.php"><i class="fa fa-plus fa-lg"></i> Add State</a></li>
+                    <li><a href="admin_city.php"><i class="fa fa-plus fa-lg"></i> Add City</a></li>
+                    <li><a href="admin_area.php"><i class="fa fa-plus fa-lg"></i> Add Area</a></li>
+                    </li>
+                </ul> --}}
+            </ul>
+            
+            <hr>
 
-      <!-- Page Content -->
-      <div class="container" style="margin-top:70px;">
-        <!-- Page Heading/Breadcrumbs -->
-              <div class="row">
-                  <div class="col-lg-12">
-                      <h1 class="page-header  text-primary">About
-                          <small>Blood Bank</small>
-                      </h1>
-                      {{-- <ol class="breadcrumb">
-                          <li><a href="/home">Home</a>
-                          </li>
-                          <li class="active">About</li>
-                      </ol> --}}
-                  </div>
-              </div>
-              <!-- /.row -->
-      
-              <!-- Intro Content -->
-              <div class="row">
-                  <div class="col-md-4">
-                      <img class="img-responsive" src="images/contact.jpg" alt="">
-                  </div>
-                  <div class="col-md-8">
-                      <h2 class="text-primary">About Blood Bank</h2>
-                      <p>Blood banking is the process that takes place in the laboratory to ensure that donated blood,
-                           or blood products,are safe before they are used in blood transfusions and other medical procedures. 
-                           Blood banking includes typing the blood for transfusion and testing for infectious diseases.
-                           The term "blood bank" typically refers to a division of a hospital 
-                           where the storage of blood product occurs and where proper testing is performed 
-                           (to reduce the risk of transfusion related adverse events). However, it sometimes refers to a collection center, 
-                           and indeed some hospitals also perform collection.
-                      </p>
-                      
-                  </div>
-              </div>
-              <!-- /.row -->
-      
-      
-              <hr>
-              <p class='text-center'>Copyright &copy; bloodbank.com</p>
+        </div>
+		<div class="col-sm-9" >
+            <h3><i class="fa fa-envelope"></i> Message     <a href="admin_mess_del.php?id=
+               " class="btn-sm pull-right">Delete Message</a>
+            </h3>  	  <hr>  
 
-      
-          </div>
-          <!-- /.container -->
-      
-          <!-- jQuery -->
-          <script src="js/jquery.js"></script>
-      
-          <!-- Bootstrap Core JavaScript -->
-          <script src="js/bootstrap.min.js"></script>
-      
-
-</body>
+		
+		</div>
+	</div>
+</div>
+	</body>
 </html>

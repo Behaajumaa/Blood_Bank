@@ -52,7 +52,7 @@
                 <li><a href="/home#news">       <i class="fa fa-newspaper-o" aria-hidden="true"></i> News</a></li>
                 <li><a href="/contactUs">   <i class="fa fa-envelope"></i>  Contact us</a></li>
                 <li><a href="/adminLogin">  <i class="fa fa-user-md"></i>   Admin</a></li>
-                <li><a href="/userLogin">   <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                {{-- <li><a href="/userLogin">   <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li> --}}
                 <li><a href="/userRegister"><i class="fa fa-user-plus" aria-hidden="true"></i>  Register</a></li>
               </ul>
          </div>
@@ -60,61 +60,63 @@
      </div>
      <!-- /.container -->
  </nav>
- 
 
+    <!-- Page Content -->
+    <div class="container" style="margin-top:70px;">
 
-
-      <!-- Page Content -->
-      <div class="container" style="margin-top:70px;">
         <!-- Page Heading/Breadcrumbs -->
-              <div class="row">
-                  <div class="col-lg-12">
-                      <h1 class="page-header  text-primary">About
-                          <small>Blood Bank</small>
-                      </h1>
-                      {{-- <ol class="breadcrumb">
-                          <li><a href="/home">Home</a>
-                          </li>
-                          <li class="active">About</li>
-                      </ol> --}}
-                  </div>
-              </div>
-              <!-- /.row -->
-      
-              <!-- Intro Content -->
-              <div class="row">
-                  <div class="col-md-4">
-                      <img class="img-responsive" src="images/contact.jpg" alt="">
-                  </div>
-                  <div class="col-md-8">
-                      <h2 class="text-primary">About Blood Bank</h2>
-                      <p>Blood banking is the process that takes place in the laboratory to ensure that donated blood,
-                           or blood products,are safe before they are used in blood transfusions and other medical procedures. 
-                           Blood banking includes typing the blood for transfusion and testing for infectious diseases.
-                           The term "blood bank" typically refers to a division of a hospital 
-                           where the storage of blood product occurs and where proper testing is performed 
-                           (to reduce the risk of transfusion related adverse events). However, it sometimes refers to a collection center, 
-                           and indeed some hospitals also perform collection.
-                      </p>
-                      
-                  </div>
-              </div>
-              <!-- /.row -->
-      
-      
-              <hr>
-              <p class='text-center'>Copyright &copy; bloodbank.com</p>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header text-primary"><i class='fa fa-user-md'></i> User Login
+                  
+                </h2>
+              
+            </div>
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+				<?php
+				if(isset($_POST["submit"]))
+					{
+						if($_POST["user"]=="admin"&&$_POST["pass"]=="admin")
+						{
+							 $_SESSION['usertype'] ='admin';
+							 $_SESSION['username']='admin';
+							
+							header("location:admin_inbox.php");
+						}
+						else
+						{
+							echo "<div class='alert alert-danger'><b>Error</b> User Name and Password Incorrect.</div>";
+						}
+					}
+				?>
+					<form role="form" action="admin.php" method="post">
+			    	  	<div class="form-group">
+							 <label for="user_name" class="text-primary">User Name</label>
+			    		    <input class="form-control" name="user"  id="user" type="text" required>
+			    		</div>
+			    		<div class="form-group">
+							<label for="pass" class="text-primary">Password</label>
+			    			<input class="form-control" id="pass" name="pass" type="password" value="" required>
+			    		</div>
+						
+						
+			    		<button class="btn btn-primary pull-right" name="submit" type="submit"><i class="fa fa-sign-in"></i> Login Here</button>
+			      	</form>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+        </div>
+        <!-- /.row -->
 
-      
-          </div>
-          <!-- /.container -->
-      
-          <!-- jQuery -->
-          <script src="js/jquery.js"></script>
-      
-          <!-- Bootstrap Core JavaScript -->
-          <script src="js/bootstrap.min.js"></script>
-      
+
+       
+
+     
+  
+        </div>
+
 
 </body>
 </html>

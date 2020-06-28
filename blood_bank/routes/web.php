@@ -73,6 +73,42 @@ Route::get('/index', function () {
   ]);
 });
 
+
+Route::get('/adminLogin', function () {
+  return view('file.adminLogin');
+});
+
+Route::get('/userLogin', function () {
+  return view('file.userLogin');
+});
+
+Route::get('/userRegister', function () {
+  return view('file.userRegister');
+});
+
+Route::get('/viewMessage', function () {
+  return view('file.viewMessage');
+});
+
+Route::get('/adminInbox', function () {
+  return view('file.adminInbox');
+});
+
+
+Route::get('/viewDonors', function () {
+  return view('file.viewDonors');
+});
+
+Route::get('/updateUser', function () {
+  return view('file.updateUser');
+});
+
+
+
+
+
+
+
 //donors Table --> get all Donors
 Route::get('/donors', 'DonorController@index');
 

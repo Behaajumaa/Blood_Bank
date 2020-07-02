@@ -41,4 +41,10 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 
+
+
+
+
+
+
 Route::post('/donor/create','DonorController@store');

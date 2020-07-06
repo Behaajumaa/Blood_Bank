@@ -100,63 +100,34 @@
  
 <div class="container">
 	<div class="row">
-		<div class="col-sm-3">
+		<div class="col-sm-12">
             <hr>  
 
-            <h3 class="text-primary"> Dashboard</h3>
-            <hr>
-            
-            <ul class="nav nav-stacked">
-                <li><a href="/viewMessage"><i class="fa fa-envelope fa-lg"></i> Inbox </a></li>
-                {{-- <li><a href="admin_donor.php"><i class="fa fa-search fa-lg"></i>Search Donors</a></li> --}}
-                <li><a href="/viewDonors"><i class="fa fa-users fa-lg text-success"></i>  Donors</a></li>
-                {{-- <li><a href="admin_ndonor.php"><i class="fa fa-users fa-lg text-danger"></i> Not Active Donors</a></li> --}}
-                {{-- <li><a href="admin_need_blood.php"><i class="fa fa-bed fa-lg"></i> Need Blood</a></li> --}}
-                <hr>
-                {{-- <li><a href="#add" data-toggle="collapse" ><i class="fa fa-cogs fa-lg"></i> Settings</a></li>
-                <ul class="nav collapse" id="add">
-                    <li><a href="admin_country.php"><i class="fa fa-plus fa-lg"></i> Add Country</a>
-                    <li><a href="admin_state.php"><i class="fa fa-plus fa-lg"></i> Add State</a></li>
-                    <li><a href="admin_city.php"><i class="fa fa-plus fa-lg"></i> Add City</a></li>
-                    <li><a href="admin_area.php"><i class="fa fa-plus fa-lg"></i> Add Area</a></li>
-                    </li>
-                </ul> --}}
-            </ul>
-            
-
-        </div>
-		<div class="col-sm-9" >
-            <h3><hr>
-                {{-- <i class="fa fa-tint fa-lg text-danger" aria-hidden="true"></i> --}}
+         
             Donors</h3><hr>  
                 
                  
             
-        <div class ="table-responsive" 
-        style="
-            text-align:center !important;                           
+        <div class ="table-responsive">
+            <table class="table    table-bordered table-dark table-hover"
+            style="
+            text-align: center !important;                           
+          
            "
            }
-        
-        
-        >
-            <table
-             class=".
-                 table table-bordered table-dark table-hover"
-         
             >
 
                 <thead  >
                     <tr class="bg-danger" 
                         style="
+                         text-align: center !important;                           
                         color:white !important;
                         background-color:#FF0006; 
                         "
                         } >
-                            <th >ID            </th>
+                            {{-- <th >ID            </th> --}}
                             <th >Name          </th>
                             <th >Phone Number  </th>
-                            <th >E_mail  </th>
                             <th >Category      </th>
                             <th >Country       </th>
                             <th >City          </th>
@@ -167,21 +138,14 @@
                 <tbody>
                     @foreach($users as $user)
                     <tr>
-                    <th scope="row">{{$user->id}}</th>
+                    {{-- <th scope="row">{{$user->id}}</th> --}}
                         <td><h5 class= "text-info ">{{$user->name}}     </h5></td>
                         <td><h5 class= "text-danger">{{$user->phone}}   </h5></td>
-                        <td><h5 class= "text-danger">{{$user->email}}   </h5></td>
                         <td><h5 class= "text-info">{{$user->category}}  </h5></td>
                         <td><h5 class= "text-info">{{$user->country}}   </h5></td>
                         <td><h5 class= "text-info">{{$user->city}}      </h5></td>
-                        {{-- <td><h5 class= "text-success">{{$user->active}} </h5></td>          --}}
-                        <td>  
-                            @if($user->active==1 ) 
-                            <h5 class= "text-success">Active </h5>
-                            @else 
-                            <h5 class= "text-danger">NOT Active </h5>
-
-                            @endif   </td>
+                        {{-- <td><h5 class= "text-success">{{$user->active}} </h5></td> --}}         
+                        <td>  @if($user->active==1 ) <h5 class= "text-success">Active </h5>@endif   </td>
                     </tr>
                     @endforeach
 
@@ -189,6 +153,7 @@
             </table>
 
         </div>
+
 
 		</div>
 	</div>

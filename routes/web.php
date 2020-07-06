@@ -12,6 +12,8 @@
 */
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\User;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,6 +40,29 @@ Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middle
  
 
   Route::get('/viewDonors', function () {
-    return view('viewDonors');
+    // return view('viewDonors');
+    $users=User::all(); 
+    // $users=User::where('active',1) ->get();
+
+    return view('viewDonors',[
+
+      'users'=> $users,
+      ]);
+  
+  
   });
  
+  // Route::get('/viewActiveDonors', function () {
+  //   return view('viewActiveDonors');
+  // });
+
+  Route::get('/viewActiveDonors', function () {
+    // $users=User::all(); 
+    $users=User::where('active',1) ->get();
+
+    return view('viewActiveDonors',[
+
+      'users'=> $users,
+      ]);
+    });
+

@@ -113,7 +113,7 @@
 
                         <div class="wow fadeInUp" data-wow-delay="0.8s">
                         
-                             {{-- <div class="col-md-12 col-sm-12">
+                             <div class="col-md-12 col-sm-12">
                               <label for="select" >Select Coutry</label>
                               <select class="form-control" name  ="country" >
 
@@ -131,12 +131,11 @@
                                         <option value="Damascus">Damascus</option>
                                    
                                    </select>
-                              </div> --}}
+                              </div>
 
                               <div class="col-md-12 col-sm-12">
                                    <label for="select" >Select Gategory</label>
-                                   <input  class="form-control"  name="category" >
-                                   {{-- <select class="form-control" name  ="category" >
+                                   <select class="form-control" name  ="category" >
 
                                         <option selected  value="A+">A+</option>
                                         <option value="B+">B+</option>
@@ -147,7 +146,7 @@
                                         <option value="B-">B-</option>
                                         <option value="AB-">AB-</option>
 
-                                   </select> --}}
+                                   </select>
                               </div>
                          
                               <div class="col-md-12col-sm-12">

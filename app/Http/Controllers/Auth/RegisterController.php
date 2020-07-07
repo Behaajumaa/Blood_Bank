@@ -114,12 +114,12 @@ class RegisterController extends Controller
                 'name' => $request->get('name'),
                 'email' => $request->get('email'),
                 'password' => Hash::make($request->get('password')),
-                
-                            'phone'=>   $request->get('phone'),
-                            'category'=>$request->get('category'),
-                            'country' => $request->get('country'),
-                            'city' =>    $request->get('city'),
-                            'active'=>  $request->get('active'),
+            
+                'phone'=>   $request->get('phone'),
+                'category'=>$request->get('category'),
+                'country' => $request->get('country'),
+                'city' =>    $request->get('city'),
+                'active'=>  $request->get('active'),
                  
             ]);
 

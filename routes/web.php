@@ -13,7 +13,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\User;
-
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,41 +28,61 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
 
-
-  Route::get('/contactUs', function () {
+Route::get('/contactUs', function () {
     return view('contactUs');
   });
 
-  Route::get('/searchForm', function () {
-    return view('searchForm');
+Route::get('/search', function () {
+    return view('search');
   });
+
+
+  Route::get('/search', function () {
+    return view('search');
+  });
+
+
+
+  Route::get('/viewActiveDonors',function(Request $category){
+    // $category =  
+    // $country  =  
+    // $city     =  
+
+    // $users=User::where('active',1)->get();
+    $users = User::where([
+        ['category',  'A+'],
+        ['country',  'lebanon'],
+        ['city',  'Beirut']
+
+    ])->get();
+        return view('viewActiveDonors',[
+          'users'=> $users,
+        ]);
+});
+
+
    
- 
-
-  Route::get('/viewDonors', function () {
-    // return view('viewDonors');
+Route::get('/viewDonors', function () {
     $users=User::all(); 
-    // $users=User::where('active',1) ->get();
-
     return view('viewDonors',[
-
       'users'=> $users,
       ]);
-  
-  
   });
  
-  // Route::get('/viewActiveDonors', function () {
-  //   return view('viewActiveDonors');
-  // });
 
-  Route::get('/viewActiveDonors', function () {
-    // $users=User::all(); 
-    $users=User::where('active',1) ->get();
+// Route::get('/viewActiveDonors', function () {
 
-    return view('viewActiveDonors',[
+    // $users=User::where('active',1) ->get();
+    // return view('viewActiveDonors',[
+    //   'users'=> $users,
+    //   ]);
+    // });
 
-      'users'=> $users,
-      ]);
-    });
+// Route::get('/viewActiveDonors', function () {
+//       $users=User::where('active',1) ->get();
+//       return view('viewActiveDonors',[
+//         'users'=> $users,
+//         ]);
+//     });
+    
 

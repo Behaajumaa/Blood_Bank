@@ -50,7 +50,7 @@
                 <li><a href="/aboutUs">     <i class="fa fa-users"></i>   About us</a></li>
                 <li><a href="/#news">       <i class="fa fa-newspaper-o" aria-hidden="true"></i> News</a></li>
                 <li><a href="/contactUs">   <i class="fa fa-envelope"></i>  Contact us</a></li>
-                <li><a href="/searchForm">   <i class="fa fa-search" aria-hidden="true"></i>  Search</a></li>
+                <li><a href="/search">   <i class="fa fa-search" aria-hidden="true"></i>  Search</a></li>
  
  
                     <!-- Authentication Links -->

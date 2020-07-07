@@ -104,79 +104,55 @@
 
               <div class="col-md-6 col-sm-6">
                    <!-- Search FORM HERE -->
-                   <form id="appointment-form" role="form" method="POST" action="insert.php">
-
+                   <form id="appointment-form" role="search" method="GET" action="/viewActiveDonors">
+                    {{ csrf_field() }}
                         <!-- SECTION TITLE -->
                         <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
                              <h2>Fine Donor</h2>
                         </div>
 
                         <div class="wow fadeInUp" data-wow-delay="0.8s">
-                             <div class="col-md-6 col-sm-6">
-                                  {{-- <label for="name">Name</label>
-                                  <input type="text" class="form-control" id="name" name="name" placeholder="Full Name"> --}}
-                             </div>
-
-                             <div class="col-md-6 col-sm-6">
-                                  {{-- <label for="email">Email</label>
-                                  <input type="email" class="form-control" id="email" name="email" placeholder="Your Email"> --}}
-                             </div>
-
-                             <div class="col-md-6 col-sm-6">
-                                  {{-- <label for="date">Select Date</label>
-                                  <input type="date" name="date" value="" class="form-control"> --}}
-                             </div>
-
-                            
-
-                             <div class="col-md-12 col-sm-12">
+                        
+                             {{-- <div class="col-md-12 col-sm-12">
                               <label for="select" >Select Coutry</label>
-                              <select class="form-control" name  ="category" >
+                              <select class="form-control" name  ="country" >
 
                                    <option selected  value="Lebanon">Lebanon</option>
                                    <option value="USA">USA</option>
-                                   <option value="syria">Syria</option>
-                                   <option value="Egypt">Egypt</option>
-                                   <option value="canada">Canada</option>
-                                  
+                                 
                               </select>
-                         </div>
+                              </div>
 
-                         <div class="col-md-12 col-sm-12">
-                              <label for="select" >Select City</label>
-                              <select class="form-control" name  ="category" >
+                              <div class="col-md-12 col-sm-12">
+                                   <label for="select" >Select City</label>
+                                   <select class="form-control" name  ="city" >
 
-                                   <option selected  value="Lebanon">Beirut</option>
-                                   <option value="Damascus">Damascus</option>
-                                   <option value="Aleppo">Aleppo</option>
-                                   <option value="Cairo">Cairo</option>
-                                   <option value="Zahle">Zahle</option>
-                                  
-                              </select>
-                         </div>
+                                        <option selected  value="Lebanon">Beirut</option>
+                                        <option value="Damascus">Damascus</option>
+                                   
+                                   </select>
+                              </div> --}}
 
-                         <div class="col-md-12 col-sm-12">
-                              <label for="select" >Select Gategory</label>
-                              <select class="form-control" name  ="category" >
+                              <div class="col-md-12 col-sm-12">
+                                   <label for="select" >Select Gategory</label>
+                                   <input  class="form-control"  name="category" >
+                                   {{-- <select class="form-control" name  ="category" >
 
-                                   <option selected  value="A+">A+</option>
-                                   <option value="B+">B+</option>
-                                   <option value="AB+">AB+</option>
-                                   <option value="O+">O+</option>
-                                   <option value="O-">O-</option>
-                                   <option value="A-">A-</option>
-                                   <option value="B-">B-</option>
-                                   <option value="AB-">AB-</option>
+                                        <option selected  value="A+">A+</option>
+                                        <option value="B+">B+</option>
+                                        <option value="AB+">AB+</option>
+                                        <option value="O+">O+</option>
+                                        <option value="O-">O-</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B-">B-</option>
+                                        <option value="AB-">AB-</option>
 
-                              </select>
-                         </div>
-                            
-
-                            
-
-                             <div class="col-md-12col-sm-12">
-                                  <button type="submit" class="form-control" id="cf-submit" name="submit">Search</button>
-                             </div>
+                                   </select> --}}
+                              </div>
+                         
+                              <div class="col-md-12col-sm-12">
+                                   <button type="submit" class="form-control" id="cf-submit" name="submit">Search</button>
+                              </div>
                         </div>
                   </form>
               </div>

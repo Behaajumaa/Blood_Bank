@@ -97,20 +97,17 @@
     </div>
     <!-- /.container -->
 </nav>
- 
+
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
             <hr>  
 
          
-           <h3> Donors</h3><hr>  
-
-
-           
+           <h3> Donors</h3><hr>      
        
         <div class ="table-responsive">
-            <table class="table    table-bordered table-dark table-hover"
+            <table id="table11" class="table    table-bordered table-dark table-hover"
             style="
             text-align: center !important;                           
           

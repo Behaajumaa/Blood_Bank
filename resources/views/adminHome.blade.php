@@ -14,14 +14,14 @@
      <meta name="author" content="">
      <title>Document</title>
 
-     <link  href="css/bootstrap.min.css"                rel="stylesheet">
-     <link  href="css/font-awesome.min.css"             rel="stylesheet" >
-     <link  href="css/animate.css"                      rel="stylesheet">
-     <link  href="css/owl.carousel.css"                 rel="stylesheet">
-     <link  href="css/owl.theme.default.min.css"        rel="stylesheet">
-     <link href="css/modern-business.css"               rel="stylesheet">
-     <link href="css/jquery-ui.css"                     rel="stylesheet">
-     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+     <link  href="/css/bootstrap.min.css"                rel="stylesheet">
+     <link  href="/css/font-awesome.min.css"             rel="stylesheet" >
+     <link  href="/css/animate.css"                      rel="stylesheet">
+     <link  href="/css/owl.carousel.css"                 rel="stylesheet">
+     <link  href="/css/owl.theme.default.min.css"        rel="stylesheet">
+     <link href="/css/modern-business.css"               rel="stylesheet">
+     <link href="/css/jquery-ui.css"                     rel="stylesheet">
+     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet">
      <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
      rel="stylesheet"  type='text/css'>
 
@@ -29,7 +29,7 @@
      <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 
      <!-- MAIN CSS -->
-     <link rel="stylesheet" href="css/tooplate-style.css">
+     <link rel="stylesheet" href="/css/tooplate-style.css">
 
 </head>
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
@@ -198,14 +198,14 @@
 
 
   <!-- SCRIPTS -->
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
   {{-- <script src="js/jquery.sticky.js"></script> --}}
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script src="js/smoothscroll.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/custom.js"></script>
+  <script src="/js/jquery.stellar.min.js"></script>
+  <script src="/js/wow.min.js"></script>
+  <script src="/js/smoothscroll.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/custom.js"></script>
 
   <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 

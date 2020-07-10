@@ -22,6 +22,7 @@ Route::get('/', function () {
 
 
 Route::post('Register', 'Auth\RegisterController@register') ->name('Register');
+Route::post('Search', 'SearchController@search');
 
 Auth::routes();
 
@@ -32,15 +33,13 @@ Route::get('/contactUs', function () {
     return view('contactUs');
   });
 
+  Route::get('/api', function () {
+    return view('api');
+  });
+
 Route::get('/search', function () {
     return view('search');
   });
-
-
-  Route::get('/search', function () {
-    return view('search');
-  });
-
 
 
   Route::get('/viewActiveDonors',function(Request $category){
@@ -48,13 +47,13 @@ Route::get('/search', function () {
     // $country  =  
     // $city     =  
 
-    // $users=User::where('active',1)->get();
-    $users = User::where([
-        ['category',  'A+'],
-        ['country',  'lebanon'],
-        ['city',  'Beirut']
+    $users=User::where('active',1)->get();
+    // $users = User::where([
+    //     ['category',  'A+'],
+    //     ['country',  'lebanon'],
+    //     ['city',  'Beirut']
 
-    ])->get();
+    // ])->get();
         return view('viewActiveDonors',[
           'users'=> $users,
         ]);

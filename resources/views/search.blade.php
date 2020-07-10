@@ -50,7 +50,7 @@
                 <li><a href="/aboutUs">     <i class="fa fa-users"></i>   About us</a></li>
                 <li><a href="/#news">       <i class="fa fa-newspaper-o" aria-hidden="true"></i> News</a></li>
                 <li><a href="/contactUs">   <i class="fa fa-envelope"></i>  Contact us</a></li>
-                <li><a href="/searchForm">   <i class="fa fa-search" aria-hidden="true"></i>  Search</a></li>
+                <li><a href="/search">   <i class="fa fa-search" aria-hidden="true"></i>  Search</a></li>
  
  
                     <!-- Authentication Links -->
@@ -104,7 +104,7 @@
 
               <div class="col-md-6 col-sm-6">
                    <!-- Search FORM HERE -->
-                   <form id="appointment-form" role="search" method="GET" action="/viewActiveDonors">
+                   <form id="appointment-form" role="search" method="post" action="{{action('SearchController@search')}}">
                     {{ csrf_field() }}
                         <!-- SECTION TITLE -->
                         <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
@@ -127,7 +127,7 @@
                                    <label for="select" >Select City</label>
                                    <select class="form-control" name  ="city" >
 
-                                        <option selected  value="Lebanon">Beirut</option>
+                                        <option selected  value="Beirut">Beirut</option>
                                         <option value="Damascus">Damascus</option>
                                    
                                    </select>

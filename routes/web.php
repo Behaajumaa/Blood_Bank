@@ -33,9 +33,14 @@ Route::get('/contactUs', function () {
     return view('contactUs');
   });
 
-  Route::get('/api', function () {
-    return view('api');
+  Route::get('/countriesApi', function () {
+    return view('countriesApi');
   });
+
+  Route::get('/citiesApi', function () {
+    return view('citiesApi');
+  });
+
 
 Route::get('/search', function () {
     return view('search');

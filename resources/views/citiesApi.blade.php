@@ -1,8 +1,7 @@
-
 <?php
 $curl = curl_init();
 curl_setopt_array($curl, array(
-	CURLOPT_URL => "https://countries-cities.p.rapidapi.com/location/country/US/city/list?page=2&per_page=20&format=json&population=15000",
+	CURLOPT_URL => "https://countries-cities.p.rapidapi.com/location/country/SY/city/list?page=2&per_page=20&format=json&population=15000",
 	CURLOPT_RETURNTRANSFER => true,
 	CURLOPT_FOLLOWLOCATION => true,
 	CURLOPT_ENCODING => "",
@@ -25,7 +24,13 @@ if ($err) {
 	echo "cURL Error #:" . $err;
 } else {
 	$cities = json_decode($response);
-	dd($cities);
-
 	
+
+		foreach ($cities->cities as $key => $value) {
+	echo $value->name.'<br/>';
+		// dd($cities->cities);
+	}
 }
+	
+
+?>

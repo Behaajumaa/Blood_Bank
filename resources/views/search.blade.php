@@ -115,7 +115,7 @@
                         
                              <div class="col-md-12 col-sm-12">
                               <label for="select" >Select Coutry</label>
-                              <select class="form-control" name  ="country" >
+                                <select class="form-control" name  ="country" >
 
                                    {{-- <option value="USA">USA</option> --}}
 
@@ -123,63 +123,89 @@
 
 
 
-            <?php
+                                    <?php
 
-            $curl = curl_init();
-            
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => "https://countries-cities.p.rapidapi.com/location/country/list?format=json",
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 30,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "GET",
-                CURLOPT_HTTPHEADER => array(
-                    "x-rapidapi-host: countries-cities.p.rapidapi.com",
-                    "x-rapidapi-key: f395975d9cmshb729a9c28f3f76dp12080djsnb34d53145864"
-                ),
-            ));
-            
-            $response = curl_exec($curl);
-            $err = curl_error($curl);
-            
-            curl_close($curl);
-            
-            if ($err) {
-                echo "cURL Error #:" . $err;
-            } else {
-                $countries = json_decode($response);
-            //    foreach ($countries->countries as $key => $v) {
-            //    echo $v.'<br/>';
-    
-            }
-            
-            ?>
+                                    $curl = curl_init();
+                                    
+                                    curl_setopt_array($curl, array(
+                                        CURLOPT_URL => "https://countries-cities.p.rapidapi.com/location/country/list?format=json",
+                                        CURLOPT_RETURNTRANSFER => true,
+                                        CURLOPT_FOLLOWLOCATION => true,
+                                        CURLOPT_ENCODING => "",
+                                        CURLOPT_MAXREDIRS => 10,
+                                        CURLOPT_TIMEOUT => 30,
+                                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                                        CURLOPT_CUSTOMREQUEST => "GET",
+                                        CURLOPT_HTTPHEADER => array(
+                                            "x-rapidapi-host: countries-cities.p.rapidapi.com",
+                                            "x-rapidapi-key: f395975d9cmshb729a9c28f3f76dp12080djsnb34d53145864"
+                                        ),
+                                    ));
+                                    
+                                    $response = curl_exec($curl);
+                                    $err = curl_error($curl);
+                                    
+                                    curl_close($curl);
+                                    
+                                    if ($err) {
+                                        echo "cURL Error #:" . $err;
+                                    } else {
+                                        $countries = json_decode($response);
+                                
+                                    }
+                                    
+                                    ?>
                                        
-                            @foreach ($countries->countries as $key => $v) 
-                    
-                                    <option selected  value="Lebanon">   {{$v}}    </option>
-                            @endforeach
+                                    @foreach ($countries->countries as $key => $v) 
+                                            <option selected  value="Lebanon">   {{$v}}    </option>
+                                    @endforeach
+                                 </select>
 
-
-
-                                   
-                                 
-                              </select>
                               </div>
 
                               <div class="col-md-12 col-sm-12">
                                    <label for="select" >Select City</label>
                                    <select class="form-control" name  ="city" >
 
-                                        <option selected  value="Beirut">Beirut</option>
-                                        <option value="Damascus">Damascus</option>
+
+
+
+                                    <?php
+                                    $curl = curl_init();
+                                    curl_setopt_array($curl, array(
+                                        CURLOPT_URL => "https://countries-cities.p.rapidapi.com/location/country/SY/city/list?page=2&per_page=20&format=json&population=15000",
+                                        CURLOPT_RETURNTRANSFER => true,
+                                        CURLOPT_FOLLOWLOCATION => true,
+                                        CURLOPT_ENCODING => "",
+                                        CURLOPT_MAXREDIRS => 10,
+                                        CURLOPT_TIMEOUT => 30,
+                                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                                        CURLOPT_CUSTOMREQUEST => "GET",
+                                        CURLOPT_HTTPHEADER => array(
+                                            "x-rapidapi-host: countries-cities.p.rapidapi.com",
+                                            "x-rapidapi-key: f395975d9cmshb729a9c28f3f76dp12080djsnb34d53145864"
+                                        ),
+                                    ));
+
+                                    $response = curl_exec($curl);
+                                    $err = curl_error($curl);
+
+                                    curl_close($curl);
+
+                                    if ($err) {
+                                        echo "cURL Error #:" . $err;
+                                    } else {
+                                        $cities = json_decode($response); 
+                                    }
+                                    ?>
+
+
+                                    {{-- @foreach ($cities->cities as $key => $value) 
+                                    <option selected  value="Lebanon">   {{$value}}    </option>
+                                    @endforeach  --}}
                                    
                                    </select>
                               </div>
-
                               <div class="col-md-12 col-sm-12">
                                    <label for="select" >Select Gategory</label>
                                    <select class="form-control" name  ="category" >

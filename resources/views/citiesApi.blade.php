@@ -25,11 +25,18 @@ if ($err) {
 } else {
 	$cities = json_decode($response);
 	
-
+	$myArrayOfCities = array( );
 		foreach ($cities->cities as $key => $value) {
-	echo $value->name.'<br/>';
-		// dd($cities->cities);
+			// echo $value->name.'<br/>';
+			array_push($myArrayOfCities,$value->name);
+	     	// dd($cities->cities);
 	}
+
+
+	foreach ($myArrayOfCities as $value) {
+	echo $value.'<br/>';
+	}
+
 }
 	
 

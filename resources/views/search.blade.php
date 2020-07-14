@@ -168,8 +168,6 @@
                                    <select class="form-control" name  ="city" >
 
 
-
-
                                     <?php
                                     $curl = curl_init();
                                     curl_setopt_array($curl, array(
@@ -186,19 +184,25 @@
                                             "x-rapidapi-key: f395975d9cmshb729a9c28f3f76dp12080djsnb34d53145864"
                                         ),
                                     ));
-
+                                    
                                     $response = curl_exec($curl);
                                     $err = curl_error($curl);
-
+                                    
                                     curl_close($curl);
-
+                                    
                                     if ($err) {
                                         echo "cURL Error #:" . $err;
                                     } else {
-                                        $cities = json_decode($response); 
-                                    }
+                                        $cities = json_decode($response);
+                                        
+                                       }
+                                    
+                                    
+                                       
+                                    
                                     ?>
 
+                                  
 
                                     {{-- @foreach ($cities->cities as $key => $value) 
                                     <option selected  value="Lebanon">   {{$value}}    </option>

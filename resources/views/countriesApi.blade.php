@@ -24,9 +24,10 @@ if ($err) {
 	echo "cURL Error #:" . $err;
 } else {
 	$countries = json_decode($response);
+	// dd($countries);
 	foreach ($countries->countries as $k => $v) {
-	echo $v.'<br/>';
-	// echo $k.' : '.$v.'<br/>';
+	// echo $v.'<br/>';
+	echo $k.' : '.$v.'<br/>';
 	// dd($countries->countries);
 }
 }

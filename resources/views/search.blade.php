@@ -193,19 +193,29 @@
                                     if ($err) {
                                         echo "cURL Error #:" . $err;
                                     } else {
-                                        $cities = json_decode($response);
+                                        $citiess = json_decode($response);
+                                        // dd($cities);
+                                        // $myArrayOfCities = array( );
+                                            // foreach ($cities->cities as $key => $value) {
+                                            //     echo $value->name.'<br/>';
+                                        // 		array_push($myArrayOfCities,$value->name);
+                                        //      	// dd($cities->cities);
+                                        // }
+                                    
+                                    
+                                        // foreach ($myArrayOfCities as $value) {
+                                        // echo $value.'<br/>';
+                                        }
+                                    
+                                    // }
                                         
-                                       }
-                                    
-                                    
-                                       
                                     
                                     ?>
-
+                                  
                                   
 
-                                    {{-- @foreach ($cities->cities as $key => $value) 
-                                    <option selected  value="Lebanon">   {{$value}}    </option>
+                                   {{-- @foreach ($citiess->city as  $key => $value) {
+                                        <option selected  value="Lebanon">   {{$value->Name}}    </option>
                                     @endforeach  --}}
                                    
                                    </select>

@@ -90,3 +90,6 @@ Route::get('/viewDonors', function () {
 //     });
     
 
+Route::get('/dynamic_dependent', 'DynamicDependent@index');
+
+Route::post('dynamic_dependent/fetch', 'DynamicDependent@fetch')->name('dynamicdependent.fetch');

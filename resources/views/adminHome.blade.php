@@ -56,7 +56,7 @@
                <li><a href="/aboutUs">     <i class="fa fa-users"></i>   About us</a></li>
                <li><a href="/#news">       <i class="fa fa-newspaper-o" aria-hidden="true"></i> News</a></li>
                <li><a href="/contactUs">   <i class="fa fa-envelope"></i>  Contact us</a></li>
-               <li><a href="/searchForm">   <i class="fa fa-search" aria-hidden="true"></i>  Search</a></li>
+               <li><a href="/search">   <i class="fa fa-search" aria-hidden="true"></i>  Search</a></li>
 
 
                    <!-- Authentication Links -->
@@ -108,7 +108,7 @@
             <hr>
             
             <ul class="nav nav-stacked">
-                <li><a href="/viewMessage"><i class="fa fa-envelope fa-lg"></i> Inbox </a></li>
+                {{-- <li><a href="/viewMessage"><i class="fa fa-envelope fa-lg"></i> Inbox </a></li> --}}
                 {{-- <li><a href="admin_donor.php"><i class="fa fa-search fa-lg"></i>Search Donors</a></li> --}}
                 <li><a href="/viewDonors"><i class="fa fa-users fa-lg text-success"></i>  Donors</a></li>
                 {{-- <li><a href="admin_ndonor.php"><i class="fa fa-users fa-lg text-danger"></i> Not Active Donors</a></li> --}}
@@ -136,58 +136,52 @@
         <div class ="table-responsive">
             <table class="table table-striped  table-dark table-hover">
                 <thead >
-                    <tr class="bg-danger">
-                    <th scope="col">ID</th>
+                    <tr class="bg-danger"
+                    style="
+                    text-align: center !important;                           
+                   color:white !important;
+                   background-color:#FF0006; 
+                   "
+                   } 
+                    >
                     <th scope="col">Name</th>
                     <th scope="col">phone Number</th>
                     <th scope="col">Category</th>
-                    <th scope="col">Date</th>
+                    {{-- <th scope="col">Date</th> --}}
                     <th scope="col">Country</th>
                     <th scope="col">City</th>
                     <th scope="col">Active</th>
+                    <th scope="col">Settings</th>
+                    
 
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($users as $user)
                     <tr>
-                    <th scope="row">1</th>
-                    <td >Mark</td>
-                    <td>70035057</td>
-                    <td>A+</td>
-                    <td>20/06/2020</td>
-                    <td>Lebanon</td>
-                    <td>Zahle</td>
-                    <td><h5 class= "text-success">Active</h5></td>
+                        <td><h5 class= "text-info ">{{$user->name}}     </h5></td>
+                        <td><h5 class= "text-danger">{{$user->phone}}   </h5></td>
+                        <td><h5 class= "text-info">{{$user->category}}  </h5></td>
+                        <td><h5 class= "text-info">{{$user->country}}   </h5></td>
+                        <td><h5 class= "text-info">{{$user->city}}      </h5></td>
+                        <td>  @if($user->active==1 ) <h5 class= "text-success">Active </h5>@endif   </td>
+                        <td> 
+                           <form action="{{route('Delete',$user->id)}}"  method="post">
+                                {!! method_field('delete') !!}
+                                @csrf
+                               <button type ="submit" class="btn btn-danger">Delete </button>
+                               {{-- @method('DELETE') --}}
+                               {{-- <a href="" class="btn btn-warning">show</a> --}}
+                               {{-- <a href="" class="btn btn-info">Edit</a> --}}
+                               
+                           </form> 
+                        </td>
 
-                   
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td >Bahaa</td>
-                        <td>70035057</td>
-                        <td>AB-</td>
-                        <td>20/06/2020</td>
-                        <td>USA</td>
-                        <td>NEW YOURK</td>
-                        <td><h5 class= "text-danger">Not Active</h5></td>
+                    @endforeach
 
-                       
-                    </tr> 
-                    <tr>
-                            <th scope="row">3</th>
-                            <td >Sami</td>
-                            <td>76635057</td>
-                            <td>O+</td>
-                            <td>23/06/2020</td>
-                            <td>Syria</td>
-                            <td>Damascus</td>
-                            <td><h5 class= "text-success">Active</h5></td>
-
-
-
-                             
-                    </tr>
                 </tbody>
+              
             </table>
 
         </div>

@@ -15,6 +15,7 @@
      <title>Document</title>
 
      <link  href="css/bootstrap.min.css"                rel="stylesheet">
+     <link  href="css/optionbackgournd.css"                rel="stylesheet">
      <link  href="css/font-awesome.min.css"             rel="stylesheet" >
      <link  href="css/animate.css"                      rel="stylesheet">
      <link  href="css/owl.carousel.css"                 rel="stylesheet">
@@ -108,14 +109,14 @@
                     {{ csrf_field() }}
                         <!-- SECTION TITLE -->
                         <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
-                             <h2>Fine Donor</h2>
+                             <h2>Find Donor</h2>
                         </div>
 
                         <div class="wow fadeInUp" data-wow-delay="0.8s">
                         
                              <div class="col-md-12 col-sm-12">
                               <label for="select" >Select Coutry</label>
-                                <select class="form-control" name  ="country" >
+                                <select class="form-control optionbackgournd" name  ="country" >
 
                                    {{-- <option value="USA">USA</option> --}}
 
@@ -156,8 +157,14 @@
                                     
                                     ?>
                                        
+                                        
+
+
+                                       <option selected  value=" ">           Select Country        </option>
+
+
                                     @foreach ($countries->countries as $key => $v) 
-                                            <option selected  value="Lebanon">   {{$v}}    </option>
+                                            <option   value="Lebanon"  >   {{$v}}    </option>
                                     @endforeach
                                  </select>
 
@@ -193,28 +200,40 @@
                                     if ($err) {
                                         echo "cURL Error #:" . $err;
                                     } else {
-                                        $citiess = json_decode($response);
-                                        // dd($cities);
-                                        // $myArrayOfCities = array( );
-                                            // foreach ($cities->cities as $key => $value) {
-                                            //     echo $value->name.'<br/>';
-                                        // 		array_push($myArrayOfCities,$value->name);
-                                        //      	// dd($cities->cities);
-                                        // }
+                                        $cities = json_decode($response);
                                     
-                                    
-                                        // foreach ($myArrayOfCities as $value) {
-                                        // echo $value.'<br/>';
                                         }
                                     
-                                    // }
+                                    
+                                        $cities = json_decode($response);
                                         
                                     
                                     ?>
-                                  
+                                  <option selected  value=" ">           Select City        </option>
+                                  <option           value="Beirut">      Beirut        </option>
+                                  <option           value="Zahle">        Zahle         </option>
+                                  <option           value="West Bekaa">   West Bekaa    </option>
+                                  <option           value="Rachaya">      Rachaya       </option>
+                                  <option           value="Hasbaya">      Hasbaya       </option>
+                                  <option           value="Bent Jbail">   Bent Jbail    </option>
+                                  <option           value="Marjaayoun">   Marjaayoun    </option>
+                                  <option           value="Sour">         Sour          </option>
+                                  <option           value="Saida">        Saida         </option>
+                                  <option           value="Nabatiye">     Nabatiye      </option>
+                                  <option           value="Chouf">        Chouf         </option>
+                                  <option           value="Aley">         Aley          </option>
+                                  <option           value="Baabda">       Baabda        </option>
+                                  <option           value="Elmatn">       Elmatn        </option>
+                                  <option           value="Akkar">        Akkar         </option>
+                                  <option           value="Zgharta">      Zgharta       </option>
+                                  <option           value="Hermel">       Hermel        </option>
+                                  <option           value="Baalbek">      Baalbek       </option>
+                                  <option           value="Kesrouan">     Kesrouan      </option>
+                                  <option           value="Kesrouan">     Kesrouan      </option>
                                   
 
-                                   {{-- @foreach ($citiess->city as  $key => $value) {
+
+                                   {{-- @foreach ($cities->city as  $key => $value) {
                                         <option selected  value="Lebanon">   {{$value->Name}}    </option>
                                     @endforeach  --}}
                                    
@@ -251,6 +270,20 @@
     </div>
 </section>
 
+
+
+
+
+
+   <!-- SCRIPTS -->
+   <script src="js/jquery.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   {{-- <script src="js/jquery.sticky.js"></script> --}}
+   <script src="js/jquery.stellar.min.js"></script>
+   <script src="js/wow.min.js"></script>
+   <script src="js/smoothscroll.js"></script>
+   <script src="js/owl.carousel.min.js"></script>
+   <script src="js/custom.js"></script>
 
 </body>
 </html>

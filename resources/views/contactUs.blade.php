@@ -52,7 +52,7 @@
                <li><a href="/aboutUs">     <i class="fa fa-users"></i>   About us</a></li>
                <li><a href="/#news">       <i class="fa fa-newspaper-o" aria-hidden="true"></i> News</a></li>
                <li><a href="/contactUs">   <i class="fa fa-envelope"></i>  Contact us</a></li>
-               <li><a href="/searchForm">   <i class="fa fa-search" aria-hidden="true"></i>  Search</a></li>
+               <li><a href="/search">   <i class="fa fa-search" aria-hidden="true"></i>  Search</a></li>
 
 
                    <!-- Authentication Links -->
@@ -85,9 +85,7 @@
                    </li>
                    @endguest
 
-               {{-- <li><a href="/adminLogin">  <i class="fa fa-user-md"></i>   Admin</a></li> --}}
-               {{-- <li><a href="/userLogin">   <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li> --}}
-               {{-- <li><a href="/userRegister"><i class="fa fa-user-plus" aria-hidden="true"></i>  Register</a></li> --}}
+            
              </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -103,23 +101,7 @@
 
     <div class="row">
         <div class="col-md-8">
-        <?php
-            if(isset($_POST["submit"]))
-            {
-             $sql="INSERT INTO messages (NAME, CONTACT, EMAIL, MESSAGE, STATUS,LOGS) VALUES ('{$_POST["name"]}', '{$_POST["phone"]}', '{$_POST["email"]}', '{$_POST["message"]}', 1,NOW());";
-                if($con->query($sql))
-        {
-            echo '
-            <div class="alert alert-success">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Success!</strong> Your message has been Successfully sent.
-            </div>
-            
-            
-            ';
-        }
-            }
-        ?>
+      
 
         <h3 class='text-primary'>Send us a Message</h3>
         <form method="post" action="contact.php" role="form" >
@@ -157,12 +139,7 @@
     
     <div class="col-md-4">
         <h3 class='text-primary'>Contact Details</h3>
-        {{-- <p>
-            Blood Bank &amp; <br>Friend Medical Trust, <br>
-            34/44 ,Cherry Street,<br>
-            Nethimedu-627813.<br>
-            Salem Dt.
-        </p> --}}
+     
         <p><i class="fa fa-phone"></i> 
             <abbr title="Phone">P</abbr>: 00961 70 035 057</p>
         <p><i class="fa fa-envelope-o"></i> 
@@ -194,12 +171,9 @@
 <p class='text-centercenter'>Copyright &copy; bloodbank.com</p>
 
 </div>
-<!-- /.container -->
 
-<!-- jQuery -->
 <script src="js/jquery.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
 
 

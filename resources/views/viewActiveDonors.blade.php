@@ -123,7 +123,6 @@
                         background-color:#FF0006; 
                         "
                         } >
-                            {{-- <th >ID            </th> --}}
                             <th >Name          </th>
                             <th >Phone Number  </th>
                             <th >Category      </th>
@@ -136,13 +135,11 @@
                 <tbody>
                     @foreach($users as $user)
                     <tr>
-                    {{-- <th scope="row">{{$user->id}}</th> --}}
                         <td><h5 class= "text-info ">{{$user->name}}     </h5></td>
                         <td><h5 class= "text-danger">{{$user->phone}}   </h5></td>
                         <td><h5 class= "text-info">{{$user->category}}  </h5></td>
                         <td><h5 class= "text-info">{{$user->country}}   </h5></td>
                         <td><h5 class= "text-info">{{$user->city}}      </h5></td>
-                        {{-- <td><h5 class= "text-success">{{$user->active}} </h5></td> --}}         
                         <td>  @if($user->active==1 ) <h5 class= "text-success">Active </h5>@endif   </td>
                     </tr>
                     @endforeach

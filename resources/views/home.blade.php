@@ -97,6 +97,15 @@
  </nav>
  
 
+
+
+
+
+
+
+
+
+
     <!-- Page Content -->
     <div class="container" style="margin-top:70px;">
 
@@ -117,20 +126,42 @@
                     <div class="col-lg-12">
                         <h2 class="page-header text-primary"> Update Your Profile </h2>
                     </div>
-					<form role="form" action="admin.php" method="post">
-			    	  	<div class="form-group col-md-6">
+                    <form role="form" action= {{route('Edit')}}   method="post">
+                        {!! method_field('put')!!}
+                        @csrf
+                       	    	
+                          	<div class="form-group col-md-6">
 							 <label for="user_name" class="text-primary">User Name</label>
-			    		     <input class="form-control" name="user"  id="user" type="text" required>
+                             <input class="form-control" name="user"
+                             @if(auth()->check()){
+                                 value="{{ auth()->user()->name }}"
+                             }
+                             @endif
+                             id="user" type="text" required>
                         </div>
                         
                         <div class="form-group col-md-6">
                             <label for="user_name" class="text-primary">Phone Number</label>
-                            <input class="form-control" name="phone"  id="phone" type="text" required>
+                            <input class="form-control" name="phone" 
+                            @if(auth()->check()){
+                                value="{{ auth()->user()->phone }}"
+                            }
+                            @endif
+                             id="phone" type="text" required>
+                            
                         </div>
 
                        <div class="form-group col-md-12">
                         <label for="email"  class="text-primary" >Email</label>
-                        <input type="email" class="form-control" id="email" name="email" >
+                        <input type="email" class="form-control" id="email" name="email" 
+                        
+                        
+                        @if(auth()->check()){
+                            value="{{ auth()->user()->email }}"
+                        }
+                        @endif
+                        
+                        >
                    </div>
 
 
@@ -155,10 +186,50 @@
                         <div class="form-group col-md-6">
                             <label for="user_name" class="text-primary">Select Country</label>
                             <select class="form-control" name  ="category" >
-                                 <option selected  value="Lebanon">Lebanon</option>
-                                 <option value="Syria">Syria</option>
-                                 <option value="Syria">Syria</option>
-                                 <option value="Syria">Syria</option>
+
+                                <?php
+
+                                $curl = curl_init();
+                                
+                                curl_setopt_array($curl, array(
+                                    CURLOPT_URL => "https://countries-cities.p.rapidapi.com/location/country/list?format=json",
+                                    CURLOPT_RETURNTRANSFER => true,
+                                    CURLOPT_FOLLOWLOCATION => true,
+                                    CURLOPT_ENCODING => "",
+                                    CURLOPT_MAXREDIRS => 10,
+                                    CURLOPT_TIMEOUT => 30,
+                                    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                                    CURLOPT_CUSTOMREQUEST => "GET",
+                                    CURLOPT_HTTPHEADER => array(
+                                        "x-rapidapi-host: countries-cities.p.rapidapi.com",
+                                        "x-rapidapi-key: f395975d9cmshb729a9c28f3f76dp12080djsnb34d53145864"
+                                    ),
+                                ));
+                                
+                                $response = curl_exec($curl);
+                                $err = curl_error($curl);
+                                
+                                curl_close($curl);
+                                
+                                if ($err) {
+                                    echo "cURL Error #:" . $err;
+                                } else {
+                                    $countries = json_decode($response);
+                            
+                                }
+                                
+                                ?>
+                                   
+                                    
+
+
+                                   <option selected  value=" ">    Select Country </option>
+
+
+                                @foreach ($countries->countries as $key => $v) 
+                                        <option   value="Lebanon"  >   {{$v}}    </option>
+                                @endforeach
+
                             </select>
 
                         </div>
@@ -166,11 +237,31 @@
                         <div class="form-group col-md-6">
                             <label for="user_name" class="text-primary">Select City</label>
                             <select class="form-control" name  ="category" >
-                                 <option selected  value="Beirut">Beirut</option>
-                                 <option value="Damascus">Damascus</option>
-                                 <option value="Damascus">Damascus</option>
-                                 <option value="Damascus">Damascus</option>
-                                 <option value="Damascus">Damascus</option>
+
+                               
+
+                                <option selected  value=" ">           Select City        </option>
+                                <option           value="Beirut">      Beirut        </option>
+                                <option           value="Zahle">        Zahle         </option>
+                                <option           value="West Bekaa">   West Bekaa    </option>
+                                <option           value="Rachaya">      Rachaya       </option>
+                                <option           value="Hasbaya">      Hasbaya       </option>
+                                <option           value="Bent Jbail">   Bent Jbail    </option>
+                                <option           value="Marjaayoun">   Marjaayoun    </option>
+                                <option           value="Sour">         Sour          </option>
+                                <option           value="Saida">        Saida         </option>
+                                <option           value="Nabatiye">     Nabatiye      </option>
+                                <option           value="Chouf">        Chouf         </option>
+                                <option           value="Aley">         Aley          </option>
+                                <option           value="Baabda">       Baabda        </option>
+                                <option           value="Elmatn">       Elmatn        </option>
+                                <option           value="Akkar">        Akkar         </option>
+                                <option           value="Zgharta">      Zgharta       </option>
+                                <option           value="Hermel">       Hermel        </option>
+                                <option           value="Baalbek">      Baalbek       </option>
+                                <option           value="Kesrouan">     Kesrouan      </option>
+                                <option           value="Kesrouan">     Kesrouan      </option>
+                             
                             </select>
                         </div>
 
@@ -179,7 +270,7 @@
                             <label for="user_name" class="text-primary">Availability</label>
                             <select class="form-control" name  ="category" >
                                  <option selected  value="Active">Active</option>
-                                 <option value="Not Active"><p class='text-danger'></p>Not Active</option>
+                                 <option value="Not Active">Not Active</option>
                           
                             </select>
                         </div>
@@ -187,7 +278,7 @@
 			    	
                        
                         
-                        <button type="button" class="btn btn-primary btn-lg btn-block"> Save</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block"> Save</button>
 			      	</form>
 				</div>
 				

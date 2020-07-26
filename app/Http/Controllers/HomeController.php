@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -32,8 +33,13 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function adminHome()
-    {
-        return view('adminHome');
+    {$users=User::where('active',1)->get();
+
+        return view('adminHome',[
+            'users'=> $users,
+        ]);
     }
     
 }
+
+

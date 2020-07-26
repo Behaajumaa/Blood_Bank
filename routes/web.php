@@ -20,48 +20,36 @@ Route::get('/', function () {
 });
 
 
-
 Route::post('Register', 'Auth\RegisterController@register') ->name('Register');
-Route::post('Search', 'SearchController@search');
+
+Route::PUT('Register', 'Auth\RegisterController@update') ->name('Edit');
+
+Route::delete('delete/{id}', 'UserController@destroy') ->name('Delete');
+// Route::post('delete', 'UserController@destroy') ->name('Delete');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
 
-Route::get('/contactUs', function () {
-    return view('contactUs');
-  });
 
-  Route::get('/countriesApi', function () {
-    return view('countriesApi');
-  });
-
-  Route::get('/citiesApi', function () {
-    return view('citiesApi');
-  });
+Route::get('/contactUs',     function () {return view('contactUs');});
+Route::get('/aboutUs',       function () {return view('aboutUs');});
+Route::get('/countriesApi',  function () {return view('countriesApi');});
+Route::get('/citiesApi',     function () {return view('citiesApi');});
+Route::get('/search',        function () {return view('search');});
 
 
-Route::get('/search', function () {
-    return view('search');
-  });
+Route::post('Search', 'SearchController@search');
 
 
-  Route::get('/viewActiveDonors',function(Request $category){
-    // $category =  
-    // $country  =  
-    // $city     =  
 
-    $users=User::where('active',1)->get();
-    // $users = User::where([
-    //     ['category',  'A+'],
-    //     ['country',  'lebanon'],
-    //     ['city',  'Beirut']
-
-    // ])->get();
-        return view('viewActiveDonors',[
-          'users'=> $users,
-        ]);
+Route::get('/viewActiveDonors',function(){
+  $users=User::where('active',1)->get();
+      return view('viewActiveDonors',[
+        'users'=> $users,
+      ]);
 });
 
 
@@ -74,22 +62,3 @@ Route::get('/viewDonors', function () {
   });
  
 
-// Route::get('/viewActiveDonors', function () {
-
-    // $users=User::where('active',1) ->get();
-    // return view('viewActiveDonors',[
-    //   'users'=> $users,
-    //   ]);
-    // });
-
-// Route::get('/viewActiveDonors', function () {
-//       $users=User::where('active',1) ->get();
-//       return view('viewActiveDonors',[
-//         'users'=> $users,
-//         ]);
-//     });
-    
-
-Route::get('/dynamic_dependent', 'DynamicDependent@index');
-
-Route::post('dynamic_dependent/fetch', 'DynamicDependent@fetch')->name('dynamicdependent.fetch');

@@ -41,7 +41,13 @@
                  <span class="icon-bar"></span>
                  <span class="icon-bar"></span>
              </button>
-             <a class="navbar-brand" href="/home"> Blood Bank</a>
+             {{-- <a class="navbar-brand" href="/home">
+               <img src="images/blood-bag.png" class="img-responsive" alt="" width="77" height="77">
+             </a> --}}
+             <a class="navbar-brand" href="/home"> Blood              
+                 {{-- <img src="images/blood-bag.png" class="img-responsive" alt="" width="177" height="177"> --}}
+               Bank</a>
+
          </div>
          <!-- Collect the nav links, forms, and other content for toggling -->
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -94,11 +100,8 @@
      <!-- /.container -->
  </nav>
   
+        
 
-
-
-
- 
      <!-- HOME -->
      <section id="home" class="slider" data-stellar-background-ratio="0.5">
           
@@ -145,20 +148,31 @@
      </section>
 
 
-    
-
+   
 
      <!-- NEWS -->
      <section id="news" data-stellar-background-ratio="2.5">
           <div class="container">
                <div class="row">
 
+
                     <div class="col-md-12 col-sm-12">
                          <!-- SECTION TITLE -->
                          <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
                               <h2> News</h2>
+                              
                          </div>
                     </div>
+
+
+                    <div class="col-md-12 "">
+                         <div class="pull-right" >
+                              
+                         </div>
+                    </div>
+
+
+
 
                     <div class="col-md-4 col-sm-6">
                          <!-- NEWS THUMB -->

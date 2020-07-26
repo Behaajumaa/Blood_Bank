@@ -109,21 +109,36 @@ class RegisterController extends Controller
            if($validator->fails()){
                     return response()->json($validator->errors()->toJson(), 400);
             }
-
             $user = User::create([
                 'name' => $request->get('name'),
                 'email' => $request->get('email'),
                 'password' => Hash::make($request->get('password')),
-            
                 'phone'=>   $request->get('phone'),
                 'category'=>$request->get('category'),
                 'country' => $request->get('country'),
                 'city' =>    $request->get('city'),
-                'active'=>  $request->get('active'),
-                 
+                'active'=>  $request->get('active'),        
             ]);
-
-
   return  view('/welcome');
+
 }
+
+
+
+public function update(Request $request, User $user){
+                $request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'phone'=> ['required'],
+                'category'=>['required'],
+                'country' => ['required'],
+                'city' => ['required'],
+                'active'=>['required']
+]);
+        $user->update($request->all());
+        return  view('/welcome');
+}
+
+
+
 }
